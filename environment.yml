@@ -1,0 +1,11 @@
+name: torchvision-extra-transforms
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pillow
+  - pip:
+    - torch
+    - torchvision
