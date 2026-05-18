@@ -80,3 +80,10 @@ class _VOCSegmentation(Dataset):
   @classmethod
   def decode_target(cls, lbl: int) -> np.ndarray:
     return cls.cmap[lbl]
+
+  @classmethod
+  def decode_segmentation_image(cls, mask: np.ndarray) -> np.ndarray:
+    img = np.zeros((mask.shape[0], mask.shape[1], 3), dtype=np.uint8)
+    for lbl, c in enumerate(cls.cmap):
+      img[mask == lbl] = c
+    return img
