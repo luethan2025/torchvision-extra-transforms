@@ -2,7 +2,7 @@ import os
 from typing import Callable, Optional
 
 import numpy as np
-from PIL import Image as PIL
+from PIL import Image
 from torch.utils.data import Dataset
 
 def voc_cmap(N: int=256, normalized: bool=False) -> np.ndarray:
@@ -49,7 +49,7 @@ class _VOCSegmentation(Dataset):
     self.root = os.path.expanduser(root)
     voc_root = os.path.join(self.root, "VOCdevkit", f"VOC{self.year}")
 
-    image_dir = os.path.join(voc_root, "ImageSets")
+    image_dir = os.path.join(voc_root, "JPEGImages")
     mask_dir = os.path.join(voc_root, "SegmentationClass")
     splits_dir = os.path.join(voc_root, "ImageSets/Segmentation")
 
@@ -63,9 +63,9 @@ class _VOCSegmentation(Dataset):
     self.masks = [os.path.join(mask_dir, x + ".png") for x in file_names]
     assert (len(self.images) == len(self.masks))
 
-  def __getitem__(self, idx: int) -> tuple[PIL.Image, PIL.Image]:
-    img = PIL.Image.open(self.images[idx]).convert("RGB")
-    target = PIL.Image.open(self.masks[idx])
+  def __getitem__(self, idx: int) -> tuple[Image.Image, Image.Image]:
+    img = Image.open(self.images[idx]).convert("RGB")
+    target = Image.open(self.masks[idx])
     if self.transform is not None:
       img, target = self.transform(img, target)
     return img, target

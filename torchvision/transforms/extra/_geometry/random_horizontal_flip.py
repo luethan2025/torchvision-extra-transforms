@@ -1,6 +1,6 @@
 import random
 
-from PIL import Image as PIL
+from PIL import Image
 import torch
 import torchvision.transforms.functional as F
 
@@ -12,7 +12,7 @@ class RandomHorizontalFlip(object):
   def __init__(self, p: float=0.5) -> None:
     self.p = p
 
-  def __call__(self, img: torch.Tensor | PIL.Image, lbl: torch.Tensor | PIL.Image) -> tuple[torch.Tensor | PIL.Image, torch.Tensor | PIL.Image]:
+  def __call__(self, img: torch.Tensor | Image.Image, lbl: torch.Tensor | Image.Image) -> tuple[torch.Tensor | Image.Image, torch.Tensor | Image.Image]:
     if random.random < self.p:
       return F.hflip(img), F.hflip(lbl)
     return img, lbl
