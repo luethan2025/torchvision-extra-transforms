@@ -11,7 +11,7 @@ class Normalize(object):
     mean: (sequence or float): mean
     std: (sequence or float): standard deviation
   """
-  def __init__(self, mean: float | Sequence[float], std: float | Sequence[float]):
+  def __init__(self, mean: float | Sequence[float], std: float | Sequence[float]) -> None:
     self.mean = mean
     self.std = std
 
