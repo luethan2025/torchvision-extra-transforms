@@ -2,7 +2,6 @@ import numbers
 from typing import Sequence
 
 from PIL import Image
-import torch
 import torchvision.transforms.functional as F
 
 class CenterCrop(object):

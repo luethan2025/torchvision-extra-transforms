@@ -1,4 +1,3 @@
-import numbers
 from typing import Sequence
 
 from PIL import Image
