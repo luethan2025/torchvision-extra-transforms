@@ -13,7 +13,7 @@ class RandomHorizontalFlip(object):
     self.p = p
 
   def __call__(self, img: torch.Tensor | Image.Image, lbl: torch.Tensor | Image.Image) -> tuple[torch.Tensor | Image.Image, torch.Tensor | Image.Image]:
-    if random.random < self.p:
+    if random.random() < self.p:
       return F.hflip(img), F.hflip(lbl)
     return img, lbl
 
