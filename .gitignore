@@ -3,3 +3,7 @@ venv/
 __pycache__/
 example_datasets
 *.egg-info
+*.png
+*.jpeg
+*.jpg
+!assets/
