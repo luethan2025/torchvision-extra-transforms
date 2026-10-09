@@ -6,4 +6,5 @@ example_datasets
 *.png
 *.jpeg
 *.jpg
-!assets/examples/images/*.jpg
+!assets/examples/**/*.jpg
+!assets/examples/**/*.png
