@@ -1,22 +1,16 @@
-import os
-
 import matplotlib.pyplot as plt
 import torch
 import torchvision.transforms.extra as T
 import torchvision.transforms.functional as F
-from PIL import Image
 from torchvision.extra import make_grid
+
+from utils import load_pascal_voc2010_segmentation_example
 
 def main():
   torch.manual_seed(0)
 
   transform = T.RandomHorizontalFlip(p=1.0)
-  img = Image.open(
-    os.path.join("assets", "examples", "VOC2010", "JPEGImages", "living_room.jpg")
-  ).convert("RGB")
-  mask = Image.open(
-    os.path.join("assets", "examples", "VOC2010", "SegmentationObject", "living_room.png")
-  ).convert("RGB")
+  img, mask = load_pascal_voc2010_segmentation_example()
 
   imgs = []
   masks = []
