@@ -11,7 +11,7 @@ class CenterCrop(object):
       int instead of sequence like (h, w), a square crop (size, size) is
       made.
   """
-  def __init__(self, size: float | Sequence[int]) -> None:
+  def __init__(self, size: numbers.Number | Sequence[numbers.Number]) -> None:
     if isinstance(size, numbers.Number):
       self.size = (int(size), int(size))
     else:
