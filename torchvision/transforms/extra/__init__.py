@@ -3,6 +3,7 @@ from ._geometry.random_vertical_flip import RandomVerticalFlip as _RandomVertica
 from ._geometry.center_crop import CenterCrop as _CenterCrop
 from ._geometry.normalize import Normalize as _Normalize
 from ._geometry.resize import Resize as _Resize
+from ._geometry.gaussian_blur import GaussianBlur as _GaussianBlur
 
 class RandomHorizontalFlip(_RandomHorizontalFlip):
   __module__ = "torchvision.transforms.extra._geometry"
@@ -17,4 +18,7 @@ class Normalize(_Normalize):
   __module__ = "torchvision.transforms.extra._geometry"
 
 class Resize(_Resize):
+  __module__ = "torchvision.transforms.extra._geometry"
+
+class GaussianBlur(_GaussianBlur):
   __module__ = "torchvision.transforms.extra._geometry"
