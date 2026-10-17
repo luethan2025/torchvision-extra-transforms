@@ -8,3 +8,5 @@ example_datasets
 *.jpg
 !assets/examples/**/*.jpg
 !assets/examples/**/*.png
+!gallery/assets/**/*.jpg
+!gallery/assets/**/*.png
